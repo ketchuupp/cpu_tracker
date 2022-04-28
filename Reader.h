@@ -2,8 +2,8 @@
 // Created by arek on 26.04.2022.
 //
 
-#ifndef CPP_CPU_TRUCKER_READER_H
-#define CPP_CPU_TRUCKER_READER_H
+#ifndef CPP_CPU_TRACKER_READER_H
+#define CPP_CPU_TRACKER_READER_H
 
 #include <string>
 #include <vector>
@@ -45,4 +45,4 @@ private:
 };
 
 
-#endif //CPP_CPU_TRUCKER_READER_H
+#endif //CPP_CPU_TRACKER_READER_H

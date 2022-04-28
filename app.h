@@ -2,8 +2,8 @@
 // Created by arek on 26.04.2022.
 //
 
-#ifndef CPP_CPU_TRUCKER_APP_H
-#define CPP_CPU_TRUCKER_APP_H
+#ifndef CPP_CPU_TRACKER_APP_H
+#define CPP_CPU_TRACKER_APP_H
 
 #include <mutex>
 
@@ -36,4 +36,4 @@ private:
 };
 
 
-#endif //CPP_CPU_TRUCKER_APP_H
+#endif //CPP_CPU_TRACKER_APP_H

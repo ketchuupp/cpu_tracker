@@ -2,8 +2,8 @@
 // Created by arek on 27.04.2022.
 //
 
-#ifndef CPP_CPU_TRUCKER_ANALYZER_H
-#define CPP_CPU_TRUCKER_ANALYZER_H
+#ifndef CPP_CPU_TRACKER_ANALYZER_H
+#define CPP_CPU_TRACKER_ANALYZER_H
 
 #include <thread>
 #include "SafeQueue.hpp"
@@ -38,4 +38,4 @@ private:
 };
 
 
-#endif //CPP_CPU_TRUCKER_ANALYZER_H
+#endif //CPP_CPU_TRACKER_ANALYZER_H

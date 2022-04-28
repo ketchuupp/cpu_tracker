@@ -25,6 +25,7 @@ void Reader::start() {
         std::vector<cpu_single_mess> mess;
         read_single_proc_stat(mess);
         q_mess_analyzer.push(mess);
+        wdg.reader_reload_watchdog();
         std::this_thread::sleep_for(1000ms);
     }
 //    std::cout << "Reader finished!\n";

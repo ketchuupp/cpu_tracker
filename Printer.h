@@ -2,8 +2,8 @@
 // Created by arek on 28.04.2022.
 //
 
-#ifndef CPP_CPU_TRUCKER_PRINTER_H
-#define CPP_CPU_TRUCKER_PRINTER_H
+#ifndef CPP_CPU_TRACKER_PRINTER_H
+#define CPP_CPU_TRACKER_PRINTER_H
 
 #include <vector>
 #include "SafeQueue.hpp"
@@ -26,4 +26,4 @@ private:
 };
 
 
-#endif //CPP_CPU_TRUCKER_PRINTER_H
+#endif //CPP_CPU_TRACKER_PRINTER_H

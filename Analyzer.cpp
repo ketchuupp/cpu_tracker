@@ -26,6 +26,9 @@ void Analyzer::start() {
     while (true) {
         if (wdg.is_finish() == true)
             break;
+
+        wdg.analyzer_reload_watchdog();
+
         if (q_mess_reader.get_size() == 0)
             continue;
         std::vector<cpu_single_mess> message = q_mess_reader.pop();
