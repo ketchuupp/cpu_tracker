@@ -5,12 +5,13 @@
 #include <iomanip>
 #include "Analyzer.h"
 
+
 Analyzer::Analyzer(SafeQueue<std::vector<cpu_single_mess>> &queue_message_reader,
-                   SafeQueue<std::vector<cpu_usage>> &queue_message_printer, const bool &finish_work)
+                   SafeQueue<std::vector<cpu_usage>> &queue_message_printer, Watchdog &watchdog)
         :
         q_mess_reader(queue_message_reader),
         q_mess_printer(queue_message_printer),
-        f_work(finish_work) {
+        wdg(watchdog) {
 
 }
 
@@ -23,7 +24,7 @@ void Analyzer::start() {
     std::vector<cpu_single_mess> prev_message;
 
     while (true) {
-        if (f_work == true)
+        if (wdg.is_finish() == true)
             break;
         if (q_mess_reader.get_size() == 0)
             continue;

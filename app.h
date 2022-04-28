@@ -5,10 +5,13 @@
 #ifndef CPP_CPU_TRUCKER_APP_H
 #define CPP_CPU_TRUCKER_APP_H
 
+#include <mutex>
+
 #include "SafeQueue.hpp"
 #include "Reader.h"
 #include "Analyzer.h"
 #include "Printer.h"
+#include "Watchdog.h"
 
 class app {
 public:
@@ -25,7 +28,10 @@ private:
     Reader *reader;
     Analyzer *analyzer;
     Printer *printer;
+    Watchdog * watchdog;
 
+
+    std::mutex finish_work_mutex;
     bool finish_work;
 };
 

@@ -6,14 +6,14 @@
 #include <cstdlib>
 #include "Printer.h"
 
-Printer::Printer(SafeQueue<std::vector<cpu_usage>> &queue_message, const bool &finish_work)
-        : q_mess_analyzer(queue_message), f_work(finish_work) {
+Printer::Printer(SafeQueue<std::vector<cpu_usage>> &queue_message, Watchdog &watchdog)
+        : q_mess_analyzer(queue_message), wdg(watchdog) {
 
 }
 
 void Printer::start() {
     while (true) {
-        if (f_work == true)
+        if (wdg.is_finish() == true)
             break;
         if (q_mess_analyzer.get_size() == 0)
             continue;

@@ -10,6 +10,7 @@
 #include <thread>
 
 #include "SafeQueue.hpp"
+#include "Watchdog.h"
 
 struct cpu_single_mess {
     std::string cpu;
@@ -29,7 +30,7 @@ class Reader {
 public:
     Reader() = delete;
 
-    Reader(SafeQueue<std::vector<cpu_single_mess>> &queue_message, const bool &finish_work);
+    Reader(SafeQueue<std::vector<cpu_single_mess>> &queue_message, Watchdog &watchdog);
 
     std::thread start_thr();
 
@@ -37,7 +38,7 @@ public:
 
 private:
     SafeQueue<std::vector<cpu_single_mess>> &q_mess_analyzer;
-    const bool &f_work;
+    Watchdog &wdg;
 
     void start();
 

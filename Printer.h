@@ -8,18 +8,19 @@
 #include <vector>
 #include "SafeQueue.hpp"
 #include "Analyzer.h"
+#include "Watchdog.h"
 
 class Printer {
 public:
     Printer() = delete;
 
-    Printer(SafeQueue<std::vector<cpu_usage>> &queue_message, const bool &finish_work);
+    Printer(SafeQueue<std::vector<cpu_usage>> &queue_message, Watchdog &watchdog);
 
     std::thread start_thr();
 
 private:
     SafeQueue<std::vector<cpu_usage>> &q_mess_analyzer;
-    const bool &f_work;
+    Watchdog &wdg;
 
     void start();
 };

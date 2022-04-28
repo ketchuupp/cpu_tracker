@@ -8,6 +8,7 @@
 #include <thread>
 #include "SafeQueue.hpp"
 #include "Reader.h"
+#include "Watchdog.h"
 
 struct cpu_usage {
     int cpu_num; // 0 is total cpu usage, 1 - first core
@@ -19,7 +20,7 @@ public:
     Analyzer() = delete;
 
     Analyzer(SafeQueue<std::vector<cpu_single_mess>> &queue_message_reader,
-             SafeQueue<std::vector<cpu_usage>> &queue_message_printer, const bool &finish_work);
+             SafeQueue<std::vector<cpu_usage>> &queue_message_printer, Watchdog &watchdog);
 
     ~Analyzer();
 
@@ -30,7 +31,7 @@ public:
 private:
     SafeQueue<std::vector<cpu_single_mess>> &q_mess_reader;
     SafeQueue<std::vector<cpu_usage>> &q_mess_printer;
-    const bool &f_work;
+    Watchdog &wdg;
 
     void start();
 

@@ -10,15 +10,15 @@
 #include "SafeQueue.hpp"
 
 
-Reader::Reader(SafeQueue<std::vector<cpu_single_mess>> &queue_message, const bool &finish_work)
+Reader::Reader(SafeQueue<std::vector<cpu_single_mess>> &queue_message, Watchdog &watchdog)
         :
-        q_mess_analyzer(queue_message), f_work(finish_work) {
+        q_mess_analyzer(queue_message), wdg(watchdog) {
 }
 
 void Reader::start() {
     using namespace std::chrono_literals;
     while (true) {
-        if (f_work == true)
+        if (wdg.is_finish() == true)
             break;
         if (q_mess_analyzer.get_size() > 10)
             continue;
