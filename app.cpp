@@ -4,9 +4,6 @@
 
 #include <thread>
 #include <iostream>
-#include <future>
-#include <unistd.h>
-#include <ncurses.h>
 #include "app.h"
 
 

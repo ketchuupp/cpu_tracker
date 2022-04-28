@@ -4,7 +4,6 @@
 
 
 #include <iostream>
-#include <atomic>
 #include "Watchdog.h"
 
 Watchdog::Watchdog() {
