@@ -1,4 +1,4 @@
-# Terminal cpu tracker app
+# Linux terminal cpu tracker app
 ## Requirements 
 - c++ compiler (gcc)
 - cmake 3.21 =<
