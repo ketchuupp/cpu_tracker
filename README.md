@@ -3,7 +3,7 @@
 - c++ compiler (gcc)
 - cmake 3.21 =<
 ## Compilation
-#### Open terminal in project directory and type bellow command:
+#### Open terminal in project directory and type bellow commands:
 ```asm
 mkdir build
 cd mkdir
