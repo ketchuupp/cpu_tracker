@@ -4,14 +4,14 @@
 - cmake 3.21 =<
 ## Compilation
 #### Open terminal in project directory and type bellow commands:
-```asm
-mkdir build
-cd mkdir
-cmake ../
-cmake --build .
+```console
+foo@bar:~$ mkdir build
+foo@bar:~$ cd build
+foo@bar:~$ cmake ../
+foo@bar:~$ cmake --build .
 ```
 #### Start the application by typing:
-```asm
-./cpp_cpu_tracker
+```console
+foo@bar:~$ ./cpp_cpu_tracker
 ```
 ### Enjoy!
