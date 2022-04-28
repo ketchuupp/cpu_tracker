@@ -15,6 +15,9 @@ void Printer::start() {
     while (true) {
         if (wdg.is_finish() == true)
             break;
+
+        wdg.printer_reload_watchdog();
+
         if (q_mess_analyzer.get_size() == 0)
             continue;
         std::vector<cpu_usage> mess = std::move(q_mess_analyzer.pop());
@@ -45,7 +48,6 @@ void Printer::start() {
                       << std::setw(5)
                       << a.cpu_usage << "%\n";
         }
-
     }
 //    std::cout << "Printer finished!\n";
 }

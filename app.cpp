@@ -4,7 +4,9 @@
 
 #include <thread>
 #include <iostream>
+#include <future>
 #include <unistd.h>
+#include <ncurses.h>
 #include "app.h"
 
 
@@ -30,7 +32,6 @@ void app::start() {
     std::thread t_analyzer = analyzer->start_thr();
     std::thread t_printer = printer->start_thr();
 
-    // press enter to finish
     std::cin.get();
     watchdog->set_finish_work();
 
@@ -38,6 +39,5 @@ void app::start() {
     t_reader.join();
     t_analyzer.join();
     t_printer.join();
-    std::cout << "Finish!\n";
 }
 
