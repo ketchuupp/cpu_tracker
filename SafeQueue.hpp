@@ -2,8 +2,8 @@
 // Created by arek on 26.04.2022.
 //
 
-#ifndef CPP_CPU_TRUCKER_SAFEQUEUE_HPP
-#define CPP_CPU_TRUCKER_SAFEQUEUE_HPP
+#ifndef CPP_CPU_TRACKER_SAFEQUEUE_HPP
+#define CPP_CPU_TRACKER_SAFEQUEUE_HPP
 
 #include <queue>
 #include <mutex>
@@ -41,4 +41,4 @@ public:
 };
 
 
-#endif //CPP_CPU_TRUCKER_SAFEQUEUE_HPP
+#endif //CPP_CPU_TRACKER_SAFEQUEUE_HPP

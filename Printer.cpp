@@ -22,7 +22,7 @@ void Printer::start() {
             continue;
         std::vector<cpu_usage> mess = std::move(q_mess_analyzer.pop());
         system("clear");
-        std::cout << "\t     CPU USAGE TRUCKER\n";
+        std::cout << "\t     CPU USAGE TRACKER\n";
 
         for (auto &a: mess) {
             if (a.cpu_num == 0)
