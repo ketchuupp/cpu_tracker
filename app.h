@@ -30,9 +30,6 @@ private:
     Printer *printer;
     Watchdog * watchdog;
 
-
-    std::mutex finish_work_mutex;
-    bool finish_work;
 };
 
 

@@ -8,7 +8,6 @@
 
 
 app::app() {
-    finish_work = false;
     watchdog = new Watchdog();
     reader = new Reader(mess_reader_analyzer_queue, *watchdog);
     analyzer = new Analyzer(mess_reader_analyzer_queue, mess_analyzer_printer_queue, *watchdog);

@@ -68,7 +68,7 @@ void Watchdog::printer_reload_watchdog() {
     printer_time = std::chrono::steady_clock::now();
 }
 
-unsigned Watchdog::get_time(std::mutex &m, std::chrono::steady_clock::time_point &time) {
+static unsigned get_time(std::mutex &m, std::chrono::steady_clock::time_point &time) {
     std::lock_guard<std::mutex> guard(m);
     std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
     return std::chrono::duration_cast<std::chrono::microseconds>(now - time).count() / 1000;

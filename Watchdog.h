@@ -41,15 +41,11 @@ private:
     std::mutex printer_time_mutex;
     std::chrono::steady_clock::time_point printer_time;
 
-    /**
-     * Get time since last reload
-     * @return time[ms]
-     */
     unsigned get_reader_time();
-    unsigned get_analyzer_time();
-    unsigned get_printer_time();
 
-    unsigned get_time(std::mutex &m, std::chrono::steady_clock::time_point &time);
+    unsigned get_analyzer_time();
+
+    unsigned get_printer_time();
 
 };
 

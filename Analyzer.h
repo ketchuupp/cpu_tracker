@@ -22,9 +22,9 @@ public:
     Analyzer(SafeQueue<std::vector<cpu_single_mess>> &queue_message_reader,
              SafeQueue<std::vector<cpu_usage>> &queue_message_printer, Watchdog &watchdog);
 
-    ~Analyzer();
+    ~Analyzer() = default;
 
-    float analyze_single_core(const cpu_single_mess &core_data, const cpu_single_mess &prev_core_data) const;
+//    static float analyze_single_core(const cpu_single_mess &core_data, const cpu_single_mess &prev_core_data) const;
 
     std::thread start_thr();
 

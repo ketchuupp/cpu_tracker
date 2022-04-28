@@ -13,14 +13,14 @@ Printer::Printer(SafeQueue<std::vector<cpu_usage>> &queue_message, Watchdog &wat
 
 void Printer::start() {
     while (true) {
-        if (wdg.is_finish() == true)
+        if (wdg.is_finish())
             break;
 
         wdg.printer_reload_watchdog();
 
         if (q_mess_analyzer.get_size() == 0)
             continue;
-        std::vector<cpu_usage> mess = std::move(q_mess_analyzer.pop());
+        std::vector<cpu_usage> mess = q_mess_analyzer.pop();
         system("clear");
         std::cout << "\t     CPU USAGE TRACKER\n";
 
@@ -49,7 +49,6 @@ void Printer::start() {
                       << a.cpu_usage << "%\n";
         }
     }
-//    std::cout << "Printer finished!\n";
 }
 
 std::thread Printer::start_thr() {
