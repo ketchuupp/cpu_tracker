@@ -30,6 +30,14 @@ private:
     Printer *printer;
     Watchdog * watchdog;
 
+    std::thread t_watchdog;
+    std::thread t_reader;
+    std::thread t_analyzer;
+    std::thread t_printer;
+
+    static bool is_rise_sig_int;
+
+    static void signal_handler(int sig_num);
 };
 
 

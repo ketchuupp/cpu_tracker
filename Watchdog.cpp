@@ -20,17 +20,17 @@ void Watchdog::start() {
 
         if (get_reader_time() > 2000) {
 //            std::cout << "Reader watchdog interrupt!\nPress ENTER to continue...";
-            std::cerr << "Reader watchdog interrupt!\nPress ENTER to continue...";
+            std::cerr << "Reader watchdog interrupt!\n";
             set_finish_work();
             break;
         }
         if (get_analyzer_time() > 2000) {
-            std::cerr << "Analyzer watchdog interrupt!\nPress ENTER to continue...";
+            std::cerr << "Analyzer watchdog interrupt!\n";
             set_finish_work();
             break;
         }
         if (get_printer_time() > 2000) {
-            std::cerr << "Printer watchdog interrupt!\nPress ENTER to continue...";
+            std::cerr << "Printer watchdog interrupt!\n";
             set_finish_work();
             break;
         }
