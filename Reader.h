@@ -34,13 +34,14 @@ public:
 
     std::thread start_thr();
 
-//    void read_single_proc_stat(std::vector<cpu_single_mess> &cpu_mess, std::string proc_path = "/proc/stat");
 
 private:
     SafeQueue<std::vector<cpu_single_mess>> &q_mess_analyzer;
     Watchdog &wdg;
 
     void start();
+    static void read_single_proc_stat(std::vector<cpu_single_mess> &cpu_mess, const std::string &proc_path);
+
 
 };
 

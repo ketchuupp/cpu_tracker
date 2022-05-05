@@ -14,7 +14,7 @@ Analyzer::Analyzer(SafeQueue<std::vector<cpu_single_mess>> &queue_message_reader
 
 }
 
-static float analyze_single_core(const cpu_single_mess &core_data, const cpu_single_mess &prev_core_data) {
+float Analyzer::analyze_single_core(const cpu_single_mess &core_data, const cpu_single_mess &prev_core_data) {
     unsigned long PrevIdle;
     unsigned long PrevNonIdle;
     unsigned long PrevTotal;

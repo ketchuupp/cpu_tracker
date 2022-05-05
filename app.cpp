@@ -2,7 +2,6 @@
 // Created by arek on 26.04.2022.
 //
 
-#include <thread>
 #include <iostream>
 #include <csignal>
 #include "app.h"
@@ -46,6 +45,7 @@ void app::start() {
 }
 
 void app::signal_handler(int sig_num){
+    std::cout << "Interrupt signal (" << sig_num << ") received.\n";
     app::is_rise_sig_int = true;
 }
 

@@ -15,7 +15,7 @@ Reader::Reader(SafeQueue<std::vector<cpu_single_mess>> &queue_message, Watchdog 
         q_mess_analyzer(queue_message), wdg(watchdog) {
 }
 
-static void read_single_proc_stat(std::vector<cpu_single_mess> &cpu_mess, const std::string &proc_path = "/proc/stat") {
+void Reader::read_single_proc_stat(std::vector<cpu_single_mess> &cpu_mess, const std::string &proc_path) {
     std::ifstream proc_file;
     proc_file.open(proc_path, std::ios::in);
     if (!proc_file.is_open()) // cannot open the file
@@ -59,7 +59,7 @@ void Reader::start() {
         if (q_mess_analyzer.get_size() > 10)
             continue;
         std::vector<cpu_single_mess> mess;
-        read_single_proc_stat(mess);
+        read_single_proc_stat(mess, "/proc/stat");
         q_mess_analyzer.push(mess);
         wdg.reader_reload_watchdog();
         std::this_thread::sleep_for(1000ms);

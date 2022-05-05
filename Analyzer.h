@@ -24,7 +24,6 @@ public:
 
     ~Analyzer() = default;
 
-//    static float analyze_single_core(const cpu_single_mess &core_data, const cpu_single_mess &prev_core_data) const;
 
     std::thread start_thr();
 
@@ -34,6 +33,9 @@ private:
     Watchdog &wdg;
 
     void start();
+
+    static float analyze_single_core(const cpu_single_mess &core_data, const cpu_single_mess &prev_core_data);
+
 
 };
 
